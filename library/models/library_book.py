@@ -22,6 +22,13 @@ class LibraryBook(models.Model):
     ######################
     # Fields declaration #
     ######################
+    author_id = fields.Many2one('res-partner',
+                                string="Author_id",
+                                required=True)
+
+    category_id = fields.Many2many('library.book.category',
+                                   string="Categories")
+
 
     ##############################
     # Compute and search methods #
